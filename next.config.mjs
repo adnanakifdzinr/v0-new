@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -14,7 +13,6 @@ const nextConfig = {
       { hostname: "4mkwknnmlp45gfn8.public.blob.vercel-storage.com" },
       { hostname: "rm9cehwjzivcimqc.public.blob.vercel-storage.com" },
       { hostname: "qms1staoyjyffvwr.public.blob.vercel-storage.com" },
-      { hostname: "simontype.com" },
     ],
     minimumCacheTTL: 60 * 60 * 24 * 365, // 1 year
   },
