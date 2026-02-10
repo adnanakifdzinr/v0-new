@@ -54,7 +54,6 @@
     "pinia": "latest",
     "react": "19.2.0",
     "react-day-picker": "latest",
-    "react-div": "^1.0.5",
     "react-dom": "19.2.0",
     "react-hook-form": "latest",
     "react-resizable-panels": "latest",
