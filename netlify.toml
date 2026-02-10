@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
   functions = "functions"
-  publish = ".next"
+  publish = ".next/standalone/.next/static"
 
 [functions]
   directory = "functions"
@@ -9,7 +9,7 @@
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/"
   status = 200
 
 [[headers]]
@@ -52,12 +52,12 @@
 
 [context.production]
   command = "npm run build"
-  publish = ".next/standalone"
+  publish = ".next/standalone/.next/static"
 
 [context.preview]
   command = "npm run build"
-  publish = ".next/standalone"
+  publish = ".next/standalone/.next/static"
 
 [context.deploy-preview]
   command = "npm run build"
-  publish = ".next/standalone"
+  publish = ".next/standalone/.next/static"
