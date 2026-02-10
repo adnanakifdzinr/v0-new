@@ -1,11 +1,12 @@
 [build]
   command = "npm run build"
-  functions = "functions"
-  publish = ".next/standalone/.next/static"
+  functions = "netlify/functions"
 
-[functions]
-  directory = "functions"
-  node_bundler = "esbuild"
+[build.environment]
+  NPM_FLAGS = "--legacy-peer-deps"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [[redirects]]
   from = "/*"
@@ -46,18 +47,3 @@
   [headers.values]
     Cache-Control = "public, max-age=3600, must-revalidate"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.vercel-storage.com *.simontype.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[context.production]
-  command = "npm run build"
-  publish = ".next/standalone/.next/static"
-
-[context.preview]
-  command = "npm run build"
-  publish = ".next/standalone/.next/static"
-
-[context.deploy-preview]
-  command = "npm run build"
-  publish = ".next/standalone/.next/static"
